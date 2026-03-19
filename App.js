@@ -31,7 +31,7 @@ const RootNavigation = () => {
                 ) : (
                     // RUTAS PRIVADAS: Si hay token, tiene acceso al sistema
                     <>
-                        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio - ADSO' }} />
+                        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio - App Tareas' }} />
                         <Stack.Screen name="Tasks" component={TaskScreen} options={{ title: 'Gestión de Tareas' }} />
                         <Stack.Screen name="ProfileImage" component={ProfileImageScreen} options={{ title: 'Cambiar Imagen de Perfil' }} />
                     </>
