@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const BASE_URL = "http://10.97.138.215:8000/api";
+const BASE_URL = "http://10.87.155.215:8000/api";
 
 export const loginService = async (email, password) => {
     try {
@@ -100,6 +100,19 @@ export const uploadProfileImageService = async (token, imageUri) => {
 
         if (!response.ok) throw new Error('Error al subir la imagen');
         
+        return await response.json();
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getChatHistoryService = async (token) => {
+    try {
+        const response = await fetch(`${BASE_URL}/chat/historial/`, {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (!response.ok) throw new Error('Error cargando historial de chat');
         return await response.json();
     } catch (error) {
         throw error;
