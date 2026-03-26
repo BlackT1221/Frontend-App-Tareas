@@ -49,6 +49,12 @@ const HomeScreen = ({ navigation }) => {
                     <Text style={styles.icon}>📸</Text>
                     <Text style={styles.menuText}>Cambiar Foto</Text>
                 </TouchableOpacity>
+
+                {/* NUEVO BOTÓN: CHAT DE LA FICHA */}
+                <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Chat')}>
+                    <Text style={styles.icon}>💬</Text>
+                    <Text style={styles.menuText}>Chat Global</Text>
+                </TouchableOpacity>
             </View>
 
             <TouchableOpacity style={styles.logoutBtn} onPress={logout}>
@@ -73,14 +79,15 @@ const styles = StyleSheet.create({
     info: { marginLeft: 20 },
     name: { fontSize: 20, fontWeight: 'bold', color: '#333' },
     role: { fontSize: 14, color: '#39A900', fontWeight: '600', marginTop: 4 },
-    grid: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
+    grid: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20, flexWrap: 'wrap' },
     menuItem: { 
         backgroundColor: '#fff', 
         width: '48%', 
         padding: 25, 
         borderRadius: 15, 
         alignItems: 'center',
-        elevation: 3
+        elevation: 3,
+        marginBottom: 25
     },
     icon: { fontSize: 32, marginBottom: 10 },
     menuText: { fontWeight: '600', color: '#444' },
